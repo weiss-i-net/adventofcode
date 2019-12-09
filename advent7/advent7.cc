@@ -15,8 +15,6 @@ int main() {
     intcode.push_back(stoi(line));
   input.close();
 
-  //for (int i : intcode) std::cout << i << " ";
-
   int phase_settings[] {0, 1, 2, 3, 4};
   int* phase_perm = permutations(phase_settings, 5);
   int perm_count = fac(5);

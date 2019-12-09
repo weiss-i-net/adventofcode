@@ -1,4 +1,4 @@
-with open("input.txt", "r") as fp:
+with open("advent8/input.txt", "r") as fp:
     path_a = fp.readline().strip()
 
 data = [int(i) for i in path_a]
@@ -29,9 +29,6 @@ for i in range(rows):
     for o in range(cols):
         image[i].append(layers[0][i * cols + o])
 
-
-
-
 not_done = True
 layer = 0
 while not_done:
@@ -43,9 +40,7 @@ while not_done:
                 image[i][o] = layers[layer][i * cols + o]
                 not_done = True
 
-
 for i in image:
     for o in i:
         print(u"\U0001F44C" if o == 1 else "  ", end="")
     print()
-#testbranch
