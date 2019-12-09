@@ -35,7 +35,7 @@ for i in range(rows):
 not_done = True
 layer = 0
 while not_done:
-    not_done = False
+    not_done = False #Test
     layer += 1
     for i in range(rows):
         for o in range(cols):
