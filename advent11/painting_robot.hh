@@ -27,10 +27,10 @@ public:
 };
 
 class PaintingRobot {
+  Intcode computer;
+  map<array<int, 2>, int> panels;
   array<int, 2> curr_pos {0, 0};
   Direction dir;
-  map<array<int, 2>, int> panels;
-  Intcode computer;
 
   int GetCurrPanel() {
     if (panels.find(curr_pos) == panels.end())

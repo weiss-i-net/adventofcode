@@ -4,24 +4,16 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-bigint	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^#define bigint /;"	macro	line:4
-Intcode	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^class Intcode {$/;"	class	line:30
-op	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^  int exit_code {-1}, i {0}, op, in_index {0}, rel_base {0};$/;"	member	line:31	class:Intcode
-inst	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^  bigint inst;$/;"	member	line:32	class:Intcode
-arg1	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^  size_t arg1, arg2, arg3;$/;"	member	line:33	class:Intcode
-arg2	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^  size_t arg1, arg2, arg3;$/;"	member	line:33	class:Intcode
-arg3	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^  size_t arg1, arg2, arg3;$/;"	member	line:33	class:Intcode
-intcode	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^  vector<bigint> intcode, input, output;$/;"	member	line:34	class:Intcode
-input	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^  vector<bigint> intcode, input, output;$/;"	member	line:34	class:Intcode
-output	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^  vector<bigint> intcode, input, output;$/;"	member	line:34	class:Intcode
-print_intcode	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^  void print_intcode() { \/\/ for debugging$/;"	function	line:37	class:Intcode	signature:()
-arg_mode	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^  size_t arg_mode(int arg_num) {$/;"	function	line:44	class:Intcode	signature:(int arg_num)
-ExecIntcode	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^  void ExecIntcode() {$/;"	function	line:65	class:Intcode	signature:()
-Intcode	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^  Intcode() {}$/;"	function	line:136	class:Intcode	signature:()
-Intcode	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^  Intcode(vector<bigint> intcode_in)$/;"	function	line:137	class:Intcode	signature:(vector<bigint> intcode_in)
-Intcode	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^  Intcode(vector<bigint> intcode_in, vector<bigint> vector_in)$/;"	function	line:141	class:Intcode	signature:(vector<bigint> intcode_in, vector<bigint> vector_in)
-Intcode	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^  Intcode(vector<bigint> intcode_in, int int_in)$/;"	function	line:146	class:Intcode	signature:(vector<bigint> intcode_in, int int_in)
-IntInput	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^  void IntInput(int in) {$/;"	function	line:151	class:Intcode	signature:(int in)
-IsFinished	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^  bool IsFinished() {$/;"	function	line:155	class:Intcode	signature:()
-GetOutput	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^  vector<bigint> GetOutput() {$/;"	function	line:158	class:Intcode	signature:()
-GetLastOutput	/home/jannik/Documents/coding_advent/advent9/intcode.hh	/^  bigint GetLastOutput() {$/;"	function	line:161	class:Intcode	signature:()
+Direction	/home/jannik/Documents/advent_of_code/advent11/painting_robot.hh	/^class Direction {$/;"	class	line:8
+SetDir	/home/jannik/Documents/advent_of_code/advent11/painting_robot.hh	/^  void SetDir(int i) {$/;"	function	line:11	class:Direction	signature:(int i)
+GetDir	/home/jannik/Documents/advent_of_code/advent11/painting_robot.hh	/^  array<int, 2> GetDir() {$/;"	function	line:14	class:Direction	signature:()
+Turn	/home/jannik/Documents/advent_of_code/advent11/painting_robot.hh	/^  array<int, 2> Turn(bool turn_right) {$/;"	function	line:23	class:Direction	signature:(bool turn_right)
+PaintingRobot	/home/jannik/Documents/advent_of_code/advent11/painting_robot.hh	/^class PaintingRobot {$/;"	class	line:29
+computer	/home/jannik/Documents/advent_of_code/advent11/painting_robot.hh	/^  Intcode computer;$/;"	member	line:30	class:PaintingRobot
+panels	/home/jannik/Documents/advent_of_code/advent11/painting_robot.hh	/^  map<array<int, 2>, int> panels;$/;"	member	line:31	class:PaintingRobot
+dir	/home/jannik/Documents/advent_of_code/advent11/painting_robot.hh	/^  Direction dir;$/;"	member	line:33	class:PaintingRobot
+GetCurrPanel	/home/jannik/Documents/advent_of_code/advent11/painting_robot.hh	/^  int GetCurrPanel() {$/;"	function	line:35	class:PaintingRobot	signature:()
+RunRobot	/home/jannik/Documents/advent_of_code/advent11/painting_robot.hh	/^  void RunRobot() {$/;"	function	line:40	class:PaintingRobot	signature:()
+PaintingRobot	/home/jannik/Documents/advent_of_code/advent11/painting_robot.hh	/^  PaintingRobot (const vector<bigint> & int_programm, int colour = 0)$/;"	function	line:50	class:PaintingRobot	signature:(const vector<bigint> & int_programm, int colour = 0)
+GetPaintedPanelCount	/home/jannik/Documents/advent_of_code/advent11/painting_robot.hh	/^  int GetPaintedPanelCount() {$/;"	function	line:58	class:PaintingRobot	signature:()
+PrintResult	/home/jannik/Documents/advent_of_code/advent11/painting_robot.hh	/^  void PrintResult() {$/;"	function	line:62	class:PaintingRobot	signature:()
