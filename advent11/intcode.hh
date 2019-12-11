@@ -150,14 +150,14 @@ public:
     : intcode {intcode_in}
   { ExecIntcode(); }
 
-  Intcode(const vector<bigint> & intcode_in, const vector<bigint> & vector_in)
-    : intcode {intcode_in}
-    , input {vector_in}
-  { ExecIntcode(); }
-
   Intcode(const vector<bigint> & intcode_in, int int_in)
     : intcode {intcode_in}
     , input {int_in}
+  { ExecIntcode(); }
+
+  Intcode(const vector<bigint> & intcode_in, const vector<bigint> & vector_in)
+    : intcode {intcode_in}
+    , input {vector_in}
   { ExecIntcode(); }
 
   void IntInput(int in) {

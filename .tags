@@ -37,28 +37,6 @@ IsFinished	/home/jannik/Documents/advent_of_code/advent09/intcode.hh	/^  bool Is
 GetOutput	/home/jannik/Documents/advent_of_code/advent09/intcode.hh	/^  vector<bigint> GetOutput() {$/;"	function	line:158	class:Intcode	signature:()
 GetLastOutput	/home/jannik/Documents/advent_of_code/advent09/intcode.hh	/^  bigint GetLastOutput() {$/;"	function	line:161	class:Intcode	signature:()
 main	/home/jannik/Documents/advent_of_code/advent09/advent9.cc	/^int main() {$/;"	function	line:7	signature:()
-bigint	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^#define bigint /;"	macro	line:7
-ParseIntcode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^vector<bigint> ParseIntcode(std::string in) {$/;"	function	line:33	signature:(std::string in)
-Intcode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^class Intcode {$/;"	class	line:44
-op	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  int exit_code {-1}, i {0}, op, in_index {0}, rel_base {0};$/;"	member	line:45	class:Intcode
-inst	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  bigint inst;$/;"	member	line:46	class:Intcode
-arg1	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  size_t arg1, arg2, arg3;$/;"	member	line:47	class:Intcode
-arg2	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  size_t arg1, arg2, arg3;$/;"	member	line:47	class:Intcode
-arg3	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  size_t arg1, arg2, arg3;$/;"	member	line:47	class:Intcode
-intcode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  vector<bigint> intcode, input, output;$/;"	member	line:48	class:Intcode
-input	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  vector<bigint> intcode, input, output;$/;"	member	line:48	class:Intcode
-output	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  vector<bigint> intcode, input, output;$/;"	member	line:48	class:Intcode
-print_intcode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  void print_intcode() { \/\/ for debugging$/;"	function	line:50	class:Intcode	signature:()
-arg_mode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  size_t arg_mode(int arg_num) {$/;"	function	line:57	class:Intcode	signature:(int arg_num)
-ExecIntcode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  void ExecIntcode() {$/;"	function	line:78	class:Intcode	signature:()
-Intcode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  Intcode() {}$/;"	function	line:148	class:Intcode	signature:()
-Intcode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  Intcode(const vector<bigint> & intcode_in)$/;"	function	line:149	class:Intcode	signature:(const vector<bigint> & intcode_in)
-Intcode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  Intcode(const vector<bigint> & intcode_in, const vector<bigint> & vector_in)$/;"	function	line:153	class:Intcode	signature:(const vector<bigint> & intcode_in, const vector<bigint> & vector_in)
-Intcode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  Intcode(const vector<bigint> & intcode_in, int int_in)$/;"	function	line:158	class:Intcode	signature:(const vector<bigint> & intcode_in, int int_in)
-IntInput	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  void IntInput(int in) {$/;"	function	line:163	class:Intcode	signature:(int in)
-IsFinished	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  bool IsFinished() {$/;"	function	line:167	class:Intcode	signature:()
-GetOutput	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  const vector<bigint> & GetOutput() {$/;"	function	line:170	class:Intcode	signature:()
-GetLastOutput	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  const bigint & GetLastOutput() {$/;"	function	line:173	class:Intcode	signature:()
 main	/home/jannik/Documents/advent_of_code/advent11/advent11.cc	/^int main() {$/;"	function	line:3	signature:()
 exec_intcode	/home/jannik/Documents/advent_of_code/advent05/advent5b.cc	/^void exec_intcode(vector<int> &intcode) {$/;"	function	line:6	signature:(vector<int> &intcode)
 main	/home/jannik/Documents/advent_of_code/advent05/advent5b.cc	/^int main() {$/;"	function	line:38	signature:()
@@ -163,3 +141,25 @@ RunRobot	/home/jannik/Documents/advent_of_code/advent11/painting_robot.hh	/^  vo
 PaintingRobot	/home/jannik/Documents/advent_of_code/advent11/painting_robot.hh	/^  PaintingRobot (const vector<bigint> & int_programm, int colour = 0)$/;"	function	line:50	class:PaintingRobot	signature:(const vector<bigint> & int_programm, int colour = 0)
 GetPaintedPanelCount	/home/jannik/Documents/advent_of_code/advent11/painting_robot.hh	/^  int GetPaintedPanelCount() {$/;"	function	line:58	class:PaintingRobot	signature:()
 PrintResult	/home/jannik/Documents/advent_of_code/advent11/painting_robot.hh	/^  void PrintResult() {$/;"	function	line:62	class:PaintingRobot	signature:()
+bigint	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^#define bigint /;"	macro	line:7
+ParseIntcode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^vector<bigint> ParseIntcode(std::string in) {$/;"	function	line:33	signature:(std::string in)
+Intcode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^class Intcode {$/;"	class	line:44
+op	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  int exit_code {-1}, i {0}, op, in_index {0}, rel_base {0};$/;"	member	line:45	class:Intcode
+inst	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  bigint inst;$/;"	member	line:46	class:Intcode
+arg1	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  size_t arg1, arg2, arg3;$/;"	member	line:47	class:Intcode
+arg2	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  size_t arg1, arg2, arg3;$/;"	member	line:47	class:Intcode
+arg3	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  size_t arg1, arg2, arg3;$/;"	member	line:47	class:Intcode
+intcode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  vector<bigint> intcode, input, output;$/;"	member	line:48	class:Intcode
+input	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  vector<bigint> intcode, input, output;$/;"	member	line:48	class:Intcode
+output	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  vector<bigint> intcode, input, output;$/;"	member	line:48	class:Intcode
+print_intcode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  void print_intcode() { \/\/ for debugging$/;"	function	line:50	class:Intcode	signature:()
+arg_mode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  size_t arg_mode(int arg_num) {$/;"	function	line:57	class:Intcode	signature:(int arg_num)
+ExecIntcode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  void ExecIntcode() {$/;"	function	line:78	class:Intcode	signature:()
+Intcode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  Intcode() {}$/;"	function	line:148	class:Intcode	signature:()
+Intcode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  Intcode(const vector<bigint> & intcode_in)$/;"	function	line:149	class:Intcode	signature:(const vector<bigint> & intcode_in)
+Intcode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  Intcode(const vector<bigint> & intcode_in, int int_in)$/;"	function	line:153	class:Intcode	signature:(const vector<bigint> & intcode_in, int int_in)
+Intcode	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  Intcode(const vector<bigint> & intcode_in, const vector<bigint> & vector_in)$/;"	function	line:158	class:Intcode	signature:(const vector<bigint> & intcode_in, const vector<bigint> & vector_in)
+IntInput	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  void IntInput(int in) {$/;"	function	line:163	class:Intcode	signature:(int in)
+IsFinished	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  bool IsFinished() {$/;"	function	line:167	class:Intcode	signature:()
+GetOutput	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  const vector<bigint> & GetOutput() {$/;"	function	line:170	class:Intcode	signature:()
+GetLastOutput	/home/jannik/Documents/advent_of_code/advent11/intcode.hh	/^  const bigint & GetLastOutput() {$/;"	function	line:173	class:Intcode	signature:()
