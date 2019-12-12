@@ -4,6 +4,19 @@
 #include <algorithm>
 #include <stdlib.h>
 #include <utility>
+#include <unistd.h>
+//#include <term.h>
+//
+//void ClearScreen() {
+//if (!cur_term)
+//  {
+//  int result;
+//  setupterm( NULL, STDOUT_FILENO, &result );
+//  if (result <= 0) return;
+//  }
+//putp( tigetstr( "clear" ) );
+//}
+
 
 class Direction {
   unsigned int direction : 2 {0};
@@ -31,6 +44,7 @@ class PaintingRobot {
   map<array<int, 2>, int> panels;
   array<int, 2> curr_pos {0, 0};
   Direction dir;
+  bool DoAnimate;
 
   int GetCurrPanel() {
     if (panels.find(curr_pos) == panels.end())
@@ -43,13 +57,19 @@ class PaintingRobot {
       panels[curr_pos] = *(++computer.GetOutput().rbegin());
       array<int, 2>  move = dir.Turn(computer.GetLastOutput());
       std::transform(curr_pos.begin(), curr_pos.end(), move.begin(), curr_pos.begin(), std::plus<int>());
+      if (DoAnimate) {
+        usleep(50000);
+        PrintResult();
+        //ClearScreen();
+      }
     }
   }
 
 public:
-  PaintingRobot (const vector<bigint> & int_programm, int colour = 0)
+  PaintingRobot (const vector<bigint> & int_programm, int colour = 0, bool ani = 0)
     : computer(int_programm)
-    , panels {{{0, 0}, colour}} {
+    , panels {{{0, 0}, colour}}
+    , DoAnimate {ani} {
     RunRobot();
     //for (auto&& [key, value] : panels)
     //  cout << key[0] << " " << key[1] << endl;
@@ -65,7 +85,7 @@ public:
     for (int y = 0; y >= -5; --y) {
       for (int x = minx; x <= maxx; ++x) {
         auto pixel = panels.find({x, y});
-        cout << (pixel == panels.end() ? "  " : (pixel->second ? "\u2592\u2592" : "  "));
+        cout << (pixel == panels.end() ? "  " : (pixel->second ? "\u2593\u2593" : "\u2591\u2591"));
         }
       cout << endl;
     }
