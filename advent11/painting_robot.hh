@@ -17,7 +17,6 @@
 //putp( tigetstr( "clear" ) );
 //}
 
-
 class Direction {
   unsigned int direction : 2 {0};
 public:

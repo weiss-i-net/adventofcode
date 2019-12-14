@@ -6,19 +6,25 @@
 #include <map>
 #define pixel std::array<int, 2>
 
-std::stringstream outstream;
 
 class Arcade {
   Intcode cpu;
   std::vector<bigint> program;
   std::map<pixel, short> screen;
   int max_x {37}, max_y {20};
+  std::stringstream printstream;
 
   void SaveCpuOutput () {
     const std::vector<int> & cpu_output {cpu.GetOutput().begin(), cpu.GetOutput().end()};
     for (auto it {cpu_output.begin()}; it < cpu_output.end(); it += 3) {
       screen[{*it, *(it+1)}] = *(it + 2);
     }
+  }
+
+  void InputKey (char key) {
+    cpu.IntInput(key == 'a' ? -1 : (key == 's' ? 0 : 1));
+    SaveCpuOutput();
+    PrintScreen();
   }
 
 public:
@@ -34,7 +40,7 @@ public:
   int GetBlockCount () const {
     int block_count {0};
     for (const auto & [key, value] : screen)
-      //outstream << x << " " << y << ": " << value << std::endl;
+      //printstream << x << " " << y << ": " << value << std::endl;
       if (value == 2)
         ++block_count;
     return block_count;
@@ -47,28 +53,22 @@ public:
         if (dot != screen.end()) {
           short pix = dot->second;
           if (pix == 4)
-            outstream << "\u2593\u2593";
+            printstream << "\u2593\u2593";
           else if (pix == 3)
-            outstream << "\u2591\u2591";
+            printstream << "\u2591\u2591";
           else if (pix == 2)
-            outstream << "\u2592\u2592";
+            printstream << "\u2592\u2592";
           else if (pix == 1)
-            outstream << "\u2591\u2591";
+            printstream << "\u2591\u2591";
           else
-            outstream << "  ";
+            printstream << "  ";
         } else
-          outstream << "  ";
+          printstream << "  ";
       }
-      outstream << std::endl;
+      printstream << std::endl;
     }
-    std::cout << outstream.str();
-    outstream.str(std::string());
-  }
-
-  void InputKey (char key) {
-    cpu.IntInput(key == 'a' ? -1 : (key == 's' ? 0 : 1));
-    SaveCpuOutput();
-    PrintScreen();
+    std::cout << printstream.str();
+    printstream.str(std::string());
   }
 
   void Bot () {
@@ -86,7 +86,7 @@ public:
             }
           };
       //ClearScreen();
-      outstream << " Player: " << player[0] << " " << player[1] << "    Ball: " << ball[0] << " " << ball[1] << "    Score: " << screen[{-1, 0}] << std::endl;
+      printstream << " Player: " << player[0] << " " << player[1] << "    Ball: " << ball[0] << " " << ball[1] << "    Score: " << screen[{-1, 0}] << std::endl;
       //if (player[0] < ball[0])
       //  InputKey('d');
       //else if (player[0] == ball[0])
