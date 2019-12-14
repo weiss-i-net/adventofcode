@@ -5,7 +5,7 @@ int main(int argc, char **argv) {
   auto intc = ParseIntcode("input.txt");
   PaintingRobot bobby {intc}, julia {intc, 1, 1};
   //a
-  cout << bobby.GetPaintedPanelCount() << endl;
+  std::cout << bobby.GetPaintedPanelCount() << std::endl;
 
 
   //b
