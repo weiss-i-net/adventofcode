@@ -1,8 +1,10 @@
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <cmath>
+#include <string>
+#include <cassert>
 #define bigint __int128
-using namespace std;
 
 std::ostream& operator<<(std::ostream& os, const __int128 i) noexcept { // Overloading << for gccs __int128
   std::ostream::sentry s(os);
@@ -27,18 +29,28 @@ std::ostream& operator<<(std::ostream& os, const __int128 i) noexcept { // Overl
   return os;
 }
 
+std::vector<bigint> ParseIntcode(std::string in) {
+  std::string line;
+  std::vector<bigint> intcode;
+  std::ifstream input {in};
+  assert(input.is_open());
+  while(getline(input, line, ','))
+    intcode.push_back(stol(line));
+  input.close();
+  return intcode;
+}
+
 class Intcode {
   int exit_code {-1}, i {0}, op, in_index {0}, rel_base {0};
   bigint inst;
   size_t arg1, arg2, arg3;
-  vector<bigint> intcode, input, output;
-
+  std::vector<bigint> intcode, input, output;
 
   void print_intcode() { // for debugging
-    cout << "Intcode: ";
+    std::cout << "Intcode: ";
     for (auto i : intcode)
-      cout << i << " ";
-    cout << endl;
+      std::cout << i << " ";
+    std::cout << std::endl;
   }
 
   size_t arg_mode(int arg_num) {
@@ -63,7 +75,6 @@ class Intcode {
   }
 
   void ExecIntcode() {
-    intcode.resize(intcode.size() * 10, 0);
     while (true) {
       inst = intcode[i];
       op = inst % 100;
@@ -134,19 +145,39 @@ class Intcode {
 
 public:
   Intcode() {}
-  Intcode(vector<bigint> intcode_in)
+
+  Intcode(const std::string & intcode_in)
+    : intcode {ParseIntcode(intcode_in)}
+  { ExecIntcode(); }
+
+  Intcode(const std::vector<bigint> & intcode_in)
     : intcode {intcode_in}
   { ExecIntcode(); }
 
-  Intcode(vector<bigint> intcode_in, vector<bigint> vector_in)
+  Intcode(const std::vector<int> & intcode_in)
+    : intcode {intcode_in.begin(), intcode_in.end()}
+  { ExecIntcode(); }
+
+  Intcode(const std::vector<bigint> & intcode_in, int int_in)
+    : intcode {intcode_in}
+    , input {int_in}
+  { ExecIntcode(); }
+
+  Intcode(const std::vector<bigint> & intcode_in, const std::vector<bigint> & vector_in)
     : intcode {intcode_in}
     , input {vector_in}
   { ExecIntcode(); }
 
-  Intcode(vector<bigint> intcode_in, int int_in)
-    : intcode {intcode_in}
-    , input {int_in}
-    { ExecIntcode(); }
+  void SetProgram (const std::vector<bigint> program_in) {
+    exit_code = -1;
+    i = 0;
+    in_index = 0;
+    rel_base = 0;
+    input.clear();
+    output.clear();
+    intcode.assign(program_in.begin(), program_in.end());
+    ExecIntcode();
+  }
 
   void IntInput(int in) {
     input.push_back(in);
@@ -155,10 +186,10 @@ public:
   bool IsFinished() {
     return (exit_code == 1) ? true : false;
   }
-  vector<bigint> GetOutput() {
+  const std::vector<bigint> & GetOutput() {
     return output;
   }
-  bigint GetLastOutput() {
+  const bigint & GetLastOutput() {
     return output.back();
   }
 };
