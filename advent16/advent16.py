@@ -11,11 +11,14 @@ pattern = [0, 1, 0, -1]
 def weighting(step, index):
     return pattern[(index + 1) // (step + 1) % 4]
 
+len=len(ziffern)
 
 for i in range(100):
     new_ziffern = []
-    for i in range(len(ziffern)):
-        new_ziffern.append(sum(ziffern[o] * weighting(i, o) for o in range(len(ziffern))) % 10)
-    ziffern = new_ziffern[:]
+    for i in range(len):
+        sum = 0
+        for o in range(len):
+            sum += ziffern[o] * pattern[(o + 1) // (i + 1) % 4]
+        ziffern[i] = sum % 10
 
 print(ziffern[:9])
